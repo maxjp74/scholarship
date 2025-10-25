@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduGrants</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+  />
+</head>
+
+<body>
+  <script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "logout.html"; // redirect if not logged in
+    }
+  </script>
+  
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">
+      <img
+        src="images/graducation.png"
+        alt="EduGrants Logo"
+        width="30"
+        height="30"
+      />
+      <h2>EduGrants</h2>
+    </div>
+
+    <div class="profile">
+      <img src="https://via.placeholder.com/70" alt="Profile" />
+      <h3>John Cruz Galang</h3>
+      <span class="verified">Verified Account</span>
+    </div>
+
+    <!-- ✅ Fixed menu links -->
+    <div class="menu">
+    <a href="dashboard.html">
+      <img src="images/dashboard.png" alt="Dashboard" width="35" height="35" />
+      Dashboard
+    </a>
+    <a href="student.html" class="active">
+      <img src="images/apply.png" alt="Apply Scholarship" width="35" height="35" />
+      Apply Scholarship
+    </a>
+    <a href="renewal.html">
+      <img src="images/renewal.png" alt="Renewal" width="35" height="35" />
+      Renewal
+    </a>
+    <a href="logout.html">
+      <img src="images/logout.png" alt="Log out" width="35" height="35" />
+      Log out
+    </a>
+  </div>
+</div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <div class="header">
+  <div class="header-left">
+  </div>
+  <div class="user-info">
+    <img 
+      src="images/notificaiton.png"
+      alt="Notification"
+      class="notification-icon"
+    />
+    <div class="user-name">John Galang</div>
+  </div>
+</div>
+    
+  <h3>DASHBOARD/APPLY SCHOLARSHIP</h3>
+    <div class="content">
+      <div class="steps">
+        <div class="step active">Personal Information</div>
+        <div class="step">Residency</div>
+        <div class="step">Family Background</div>
+        <div class="step">File Upload</div>
+        <div class="step">Appointment</div>
+        <div class="step">Finish</div>
+      </div>
+
+      <div class="form-section">
+        <h3>PERSONAL INFORMATION:</h3>
+
+        <div class="form-group">
+          <div style="flex:1;">
+            <label>Lastname</label>
+            <input type="text" placeholder="Enter your Lastname" />
+          </div>
+          <div style="flex:1;">
+            <label>Firstname</label>
+            <input type="text" placeholder="Enter your Firstname" />
+          </div>
+          <div style="flex:1;">
+            <label>Middlename</label>
+            <input type="text" placeholder="Enter your Middlename" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div style="flex:1;">
+            <label>Gender</label>
+            <div class="gender-radio-group">
+              <div class="gender-option">
+                <input type="radio" id="male" name="gender" value="male" />
+                <label for="male">Male</label>
+              </div>
+              <div class="gender-option">
+                <input type="radio" id="female" name="gender" value="female" />
+                <label for="female">Female</label>
+              </div>
+            </div>
+          </div>
+
+          <div style="flex:1;">
+            <label>Civil Status</label>
+            <select
+              name="civil-status"
+              id="civil-status"
+              class="custom-select"
+            >
+              <option value="" disabled selected>Please Select</option>
+              <option value="single">Single</option>
+              <option value="married">Married</option>
+              <option value="widowed">Widowed</option>
+              <option value="separated">Separated</option>
+              <option value="divorced">Divorced</option>
+            </select>
+          </div>
+
+          <div style="flex:1;">
+            <label>Date of Birth</label>
+            <input type="date" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div style="flex:2;">
+            <label>Course</label>
+            <input type="text" />
+          </div>
+          <div style="flex:1;">
+            <label>GPA</label>
+            <input type="text" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div style="flex:1;">
+            <label>School Name</label>
+            <input type="text" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div style="flex:1;">
+            <label>Skills (optional)</label>
+            <input type="text" />
+          </div>
+          <div style="flex:1;">
+            <label>Talent (optional)</label>
+            <input type="text" />
+          </div>
+        </div>
+
+        <button class="btn">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      flatpickr("input[type='date']", {
+        dateFormat: "d/m/Y",
+        allowInput: true,
+        position: "auto center",
+        locale: {
+          firstDayOfWeek: 1,
+        },
+      });
+    });
+  </script>
+</body>
+</html>
